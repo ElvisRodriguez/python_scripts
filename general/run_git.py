@@ -9,7 +9,7 @@ def find_git_directories():
     directories = []
     os.chdir(HOME_DIRECTORY)
     for directory in os.listdir():
-        if os.path.isdir(directory):
+        if os.path.isdir(directory) and '.config' not in directory:
             directory_path = os.path.join(HOME_DIRECTORY, directory)
             if '.git' in os.listdir(directory_path):
                 directories.append(directory)
