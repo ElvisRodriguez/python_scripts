@@ -66,6 +66,7 @@ pytz
 pytube
 pytoml
 python-for-android
+python-dotenv
 pytest
 pytest-remotedata
 pytest-openfiles
