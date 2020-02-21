@@ -10,6 +10,7 @@ android-libbase					install
 android-libcutils				install
 android-liblog					install
 android-sdk-platform-tools-common		install
+android-studio					install
 ant						install
 ant-optional					install
 antlr						install
@@ -19,7 +20,6 @@ apt-utils					install
 aspell						install
 aspell-en					install
 at-spi2-core					install
-atom						install
 aufs-dkms					install
 aufs-tools					install
 autoconf					install
@@ -42,7 +42,7 @@ bzip2						install
 bzip2-doc					install
 ca-certificates					install
 ca-certificates-java				install
-cassandra					install
+cdbs						install
 cgroupfs-mount					install
 code						install
 containerd.io					install
@@ -152,6 +152,8 @@ gem-plugin-magick				install
 gem-plugin-v4l2					install
 gettext						install
 gettext-base					install
+gfortran					install
+gfortran-6					install
 ghostscript					install
 gir1.2-freedesktop:amd64			install
 gir1.2-glib-2.0:amd64				install
@@ -200,6 +202,7 @@ hostname					install
 htop						install
 hunspell-en-us					install
 i965-va-driver:amd64				install
+icu-devtools					install
 ifupdown					install
 imagemagick-6-common				install
 init						install
@@ -208,7 +211,6 @@ intltool-debian					install
 iproute2					install
 iptables					install
 iputils-ping					install
-ipython						install
 isc-dhcp-client					install
 isc-dhcp-common					install
 iso-codes					install
@@ -283,6 +285,7 @@ libbcprov-java					install
 libbdplus0:amd64				install
 libbindex-java					install
 libblas-common					install
+libblas-dev					install
 libblas3					install
 libblkid1:amd64					install
 libblosc1					install
@@ -459,6 +462,7 @@ libgdbm3:amd64					install
 libgdk-pixbuf2.0-0:amd64			install
 libgdk-pixbuf2.0-common				install
 libgeronimo-interceptor-3.0-spec-java		install
+libgfortran-6-dev:amd64				install
 libgfortran3:amd64				install
 libgif7:amd64					install
 libgirara-gtk3-2:amd64				install
@@ -549,6 +553,7 @@ libhyphen0:amd64				install
 libice-dev:amd64				install
 libice6:amd64					install
 libice6:i386					install
+libicu-dev					install
 libicu57:amd64					install
 libidn11:amd64					install
 libidn2-0:amd64					install
@@ -590,7 +595,9 @@ libjformatstring-java				install
 libjline2-java					install
 libjna-java					install
 libjna-jni					install
+libjpeg-dev					install
 libjpeg62-turbo:amd64				install
+libjpeg62-turbo-dev:amd64			install
 libjs-jquery					install
 libjs-jquery-ui					install
 libjsch-java					install
@@ -611,6 +618,7 @@ libkryo-java					install
 libksba8:amd64					install
 libkxml2-java					install
 libkyotocabinet16v5:amd64			install
+liblapack-dev					install
 liblapack3					install
 liblcms2-2:amd64				install
 libldap-2.4-2:amd64				install
@@ -630,6 +638,7 @@ liblwp-mediatypes-perl				install
 liblwp-protocol-https-perl			install
 liblz4-1:amd64					install
 liblz4-1:i386					install
+liblzma-dev:amd64				install
 liblzma5:amd64					install
 liblzma5:i386					install
 liblzo2-2:amd64					install
@@ -705,7 +714,6 @@ libopencv-video2.4v5:amd64			install
 libopenexr22:amd64				install
 libopenjp2-7:amd64				install
 libopenmpt0:amd64				install
-libopts25:amd64					install
 libopus0:amd64					install
 liborc-0.4-0:amd64				install
 libosgi-annotation-java				install
@@ -811,6 +819,7 @@ libqt5xml5:amd64				install
 libquadmath0:amd64				install
 libquicktime2:amd64				install
 libraw1394-11:amd64				install
+libreadline-dev:amd64				install
 libreadline5:amd64				install
 libreadline7:amd64				install
 libreflectasm-java				install
@@ -1078,6 +1087,8 @@ libzzip-0-13:amd64				install
 linux-compiler-gcc-6-x86			install
 linux-headers-4.9.0-11-amd64			install
 linux-headers-4.9.0-11-common			install
+linux-headers-4.9.0-12-amd64			install
+linux-headers-4.9.0-12-common			install
 linux-headers-amd64				install
 linux-kbuild-4.9				install
 linux-libc-dev:amd64				install
@@ -1127,7 +1138,6 @@ nodejs						install
 nodejs-legacy					install
 notification-daemon				install
 ntfs-3g						install
-ntp						install
 openjdk-8-jdk:amd64				install
 openjdk-8-jdk-headless:amd64			install
 openjdk-8-jre:amd64				install
@@ -1300,6 +1310,13 @@ qjackctl					install
 qt5-gtk-platformtheme:amd64			install
 qt5-style-plugins:amd64				install
 qttranslations5-l10n				install
+r-base-core					install
+r-cran-boot					install
+r-cran-cluster					install
+r-cran-foreign					install
+r-cran-kernsmooth				install
+r-cran-lattice					install
+r-cran-mass					install
 rake						install
 readline-common					install
 rename						install
@@ -1373,6 +1390,7 @@ tk						install
 tk8.6						install
 tk8.6-blt2.5					install
 tmux						install
+traceroute					install
 ttf-bitstream-vera				install
 tzdata						install
 ucf						install

@@ -3,7 +3,7 @@ import pkg_resources
 import sys
 
 
-PATH = '/home/elvisrodriguez1992/python_scripts/general'
+PATH = '/home/elvisrodriguez1992/python_scripts/utils'
 
 
 def get_package_names():
