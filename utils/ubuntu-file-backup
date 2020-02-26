@@ -42,7 +42,6 @@ bzip2						install
 bzip2-doc					install
 ca-certificates					install
 ca-certificates-java				install
-cdbs						install
 cgroupfs-mount					install
 code						install
 containerd.io					install
@@ -202,7 +201,6 @@ hostname					install
 htop						install
 hunspell-en-us					install
 i965-va-driver:amd64				install
-icu-devtools					install
 ifupdown					install
 imagemagick-6-common				install
 init						install
@@ -285,7 +283,6 @@ libbcprov-java					install
 libbdplus0:amd64				install
 libbindex-java					install
 libblas-common					install
-libblas-dev					install
 libblas3					install
 libblkid1:amd64					install
 libblosc1					install
@@ -553,7 +550,6 @@ libhyphen0:amd64				install
 libice-dev:amd64				install
 libice6:amd64					install
 libice6:i386					install
-libicu-dev					install
 libicu57:amd64					install
 libidn11:amd64					install
 libidn2-0:amd64					install
@@ -595,9 +591,7 @@ libjformatstring-java				install
 libjline2-java					install
 libjna-java					install
 libjna-jni					install
-libjpeg-dev					install
 libjpeg62-turbo:amd64				install
-libjpeg62-turbo-dev:amd64			install
 libjs-jquery					install
 libjs-jquery-ui					install
 libjsch-java					install
@@ -618,7 +612,6 @@ libkryo-java					install
 libksba8:amd64					install
 libkxml2-java					install
 libkyotocabinet16v5:amd64			install
-liblapack-dev					install
 liblapack3					install
 liblcms2-2:amd64				install
 libldap-2.4-2:amd64				install
@@ -638,7 +631,6 @@ liblwp-mediatypes-perl				install
 liblwp-protocol-https-perl			install
 liblz4-1:amd64					install
 liblz4-1:i386					install
-liblzma-dev:amd64				install
 liblzma5:amd64					install
 liblzma5:i386					install
 liblzo2-2:amd64					install
@@ -819,7 +811,6 @@ libqt5xml5:amd64				install
 libquadmath0:amd64				install
 libquicktime2:amd64				install
 libraw1394-11:amd64				install
-libreadline-dev:amd64				install
 libreadline5:amd64				install
 libreadline7:amd64				install
 libreflectasm-java				install
@@ -1085,8 +1076,6 @@ libzvbi-common					install
 libzvbi0:amd64					install
 libzzip-0-13:amd64				install
 linux-compiler-gcc-6-x86			install
-linux-headers-4.9.0-11-amd64			install
-linux-headers-4.9.0-11-common			install
 linux-headers-4.9.0-12-amd64			install
 linux-headers-4.9.0-12-common			install
 linux-headers-amd64				install
@@ -1310,13 +1299,7 @@ qjackctl					install
 qt5-gtk-platformtheme:amd64			install
 qt5-style-plugins:amd64				install
 qttranslations5-l10n				install
-r-base-core					install
-r-cran-boot					install
-r-cran-cluster					install
-r-cran-foreign					install
-r-cran-kernsmooth				install
 r-cran-lattice					install
-r-cran-mass					install
 rake						install
 readline-common					install
 rename						install
