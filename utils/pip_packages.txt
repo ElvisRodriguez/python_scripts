@@ -1,2 +1,16 @@
-setuptools
+virtualenv
+snowballstemmer
+six
+pyflakes
+pydocstyle
+pycodestyle
 pip
+mccabe
+flake8
+flake8-docstrings
+filelock
+entrypoints
+distlib
+autopep8
+appdirs
+setuptools

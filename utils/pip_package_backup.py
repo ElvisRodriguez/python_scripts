@@ -1,5 +1,6 @@
 import os
 import pkg_resources
+import subprocess
 import sys
 
 
@@ -35,7 +36,7 @@ def get_package_names_from_file():
 
 def reinstall_packages(package_names):
     for name in package_names:
-        os.system('pip install --user {module}'.format(module=name))
+        subprocess.call('python -m pip install --user {module}'.format(module=name), shell=True)
 
 
 if __name__ == '__main__':
