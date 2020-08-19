@@ -4,7 +4,7 @@ Counts the total LOC in the current directory and it's sub directories
 '''
 import os
 
-VALID_EXTENSIONS = ['.py', '.css', '.html', 'js', '.cpp', '.h', '.cc', '.java']
+VALID_EXTENSIONS = ['.py', '.css', '.html', '.js', '.cpp', '.h', '.cc', '.java']
 
 
 def find_all_valid_files(path, starting_path):
