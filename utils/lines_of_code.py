@@ -1,10 +1,9 @@
-#!/home/elvisrodriguez1992/anaconda3/bin/python3
 '''
-Counts the total LOC in the current directory and it's sub directories
+Counts total lines of code in the current directory and it's sub directories.
 '''
 import os
 
-VALID_EXTENSIONS = ['.py', '.css', '.html', '.js', '.cpp', '.h', '.cc', '.java']
+VALID_EXTENSIONS = ['.py', '.js', '.cpp', '.h', '.cc', '.c', '.java', '.sh']
 
 
 def find_all_valid_files(path, starting_path):
