@@ -1,0 +1,14 @@
+# Custom Aliases
+
+alias python="/usr/local/bin/python3.8"
+alias status='python3.8 ~/python_scripts/utils/run_git.py'
+alias pymake='python3.8 ~/python_scripts/utils/pycreate.py'
+alias pytest='python3.8 ~/python_scripts/utils/pytest.py'
+alias count-loc='python3.8 ~/python_scripts/utils/lines_of_code.py'
+alias file-backup='echo "Backing up files..." && dpkg --get-selections | grep -v deinstall > ~/python_scripts/utils/ubuntu-file-backup && cd ~/python_scripts/utils && python3.8 organize_system_backup.py && cd ~ && echo "Done."'
+alias cron-history='vim /var/mail/elvisrodriguez1992'
+alias extract-tar='tar xzvf'
+alias postman='~/Applications/Postman/app/Postman'
+alias tts-converter='/home/elvisrodriguez1992/Applications/tabletopSimConverterApp/tts-deckconverter-gui'
+alias add-ssh='. ~/.https_to_ssh.sh'
+alias open-html='xdg-open'
