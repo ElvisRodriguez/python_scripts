@@ -2,7 +2,7 @@ import os
 import sys
 
 
-HOME_DIRECTORY = '/home/elvisrodriguez1992'
+HOME_DIRECTORY = os.getcwd()
 LINE_BREAK_SIZE = 100
 
 
