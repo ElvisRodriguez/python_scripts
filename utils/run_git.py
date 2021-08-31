@@ -1,7 +1,7 @@
 import os
 
 
-HOME_DIRECTORY = os.getcwd()
+HOME_DIRECTORY = os.path.expanduser("~")
 
 def find_git_repositories():
     """Crawls through every directory in HOME_DIRECTORY to find git repos
