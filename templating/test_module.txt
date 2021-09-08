@@ -1,0 +1,15 @@
+import os
+import random
+import sys
+import unittest
+
+import {filename}
+
+
+class Test{filename}(unittest.TestCase):
+    def setUp(self):
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()
