@@ -7,6 +7,12 @@ TEMPLATES = {
 }
 
 def get_script_directory():
+    """Grabs this script's directory path.
+    Args:
+        None.
+    Returns:
+        directory_path(str): absolute path to this script excluding script filename.
+    """
     file_path = os.path.realpath(__file__)
     path_components = file_path.split('/')
     path_components.pop(-1)
@@ -14,6 +20,13 @@ def get_script_directory():
     return directory_path
 
 def create_new_file(filename, template):
+    """Creates a python module based off available templates.
+    Args:
+        filename(str): Filename of module being created.
+        template(str): Filename of template type.
+    Returns:
+        None.
+    """
     destination_path = os.getcwd()
     os.chdir(get_script_directory())
     with open(template, 'r') as template_file:
