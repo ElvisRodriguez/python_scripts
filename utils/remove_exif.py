@@ -1,4 +1,5 @@
 import os
+import sys
 from PIL import Image
 
 VALID_IMAGE_EXTENSIONS = frozenset(
@@ -22,6 +23,18 @@ def remove_exif_data(image_file_path):
     else:
         print("{} is not a supported file".format(image_file_path))
 
+def prepare_images(source_path):
+    path_files = os.listdir(source_path)
+    possible_images = [
+        os.path.join(source_path,path_file) for path_file in path_files]
+    images = [image for image in possible_images if os.path.isfile(image)]
+    return images
+
+
 
 if __name__ == "__main__":
-    pass
+    if len(sys.argv) == 2:
+        source_path = sys.argv[1]
+        images = prepare_images(source_path)
+        for image in images:
+            remove_exif_data(image)
