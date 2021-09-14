@@ -1,3 +1,4 @@
+import argparse
 import os
 import sys
 
@@ -41,19 +42,21 @@ def create_new_file(filename, template):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 2:
-        filename = sys.argv[1]
-        template = sys.argv[2].lower()
-        if template not in TEMPLATES:
-            print("template not found, available templates:")
-            print(",".join(TEMPLATES.keys()))
-            sys.exit()
-        if template == "test":
-            filename = "{}_test".format(filename)
-        create_new_file(sys.argv[1], template=TEMPLATES[template])
-    elif len(sys.argv) == 2:
-        print("Must provide a template type, available templates:")
-        print(",".join(TEMPLATES.keys()))
-    else:
-        print("filename and template must be provided, available templates:")
-        print(",".join(TEMPLATES.keys()))
+    parser = argparse.ArgumentParser(description="Generates templated python files.")
+    parser.add_argument("filename",
+        type=str,
+        help="Name of python file to be generated.")
+    parser.add_argument("template",
+        type=str,
+        help="Type of template to generate. Can be one of {}".format(','.join(TEMPLATES.keys())))
+    args = parser.parse_args()
+    filename = args.filename
+    template = args.template
+    template = template.lower()
+    if template not in TEMPLATES:
+        print("template not found, available templates:")
+        print(','.join(TEMPLATES.keys()))
+        sys.exit()
+    if template == "test":
+        filename = "{}_test".format(filename)
+    create_new_file(filename, TEMPLATES[template])
