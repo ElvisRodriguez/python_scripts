@@ -1,24 +1,13 @@
 import argparse
 import os
+from pathlib import Path
 import sys
 
+SCRIPT_DIRECTORY = Path(os.path.realpath(__file__)).parent.absolute()
 TEMPLATES = {
     "class": "class_module.txt",
     "test": "test_module.txt"
 }
-
-def get_script_directory():
-    """Grabs this script's directory path.
-    Args:
-        None.
-    Returns:
-        directory_path(str): absolute path to this script excluding script filename.
-    """
-    file_path = os.path.realpath(__file__)
-    path_components = file_path.split('/')
-    path_components.pop(-1)
-    directory_path = '/'.join(path_components)
-    return directory_path
 
 def create_new_file(filename, template):
     """Creates a python module based off available templates.
@@ -29,7 +18,7 @@ def create_new_file(filename, template):
         None.
     """
     destination_path = os.getcwd()
-    os.chdir(get_script_directory())
+    os.chdir(SCRIPT_DIRECTORY)
     with open(template, 'r') as template_file:
         raw_text = ''.join(template_file.readlines())
     script = '{filename}.py'.format(filename=filename)
