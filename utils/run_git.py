@@ -1,22 +1,28 @@
 import collections
-import datetime
+from datetime import datetime
 import json
 import os
 from pathlib import Path
 
+CURRENT_DATE = str(datetime.date(datetime.today()))
 HOME_DIRECTORY = os.path.expanduser("~")
 SCRIPT_DIRECTORY = Path(os.path.realpath(__file__)).parent.absolute()
 CACHE_FILE = os.path.join(SCRIPT_DIRECTORY, "cache.json")
 
 def load_cache():
-    """Opens and converts cache.json into a dict.
+    """Opens and loads cache.json; Creates one if it doesn't exist.
     Args:
     - None
     Returns:
     - cache(dict): JSON object used to keep track of git repos in HOME_DIRECTORY.
     """
-    with open(CACHE_FILE, 'r') as file:
-        cache = json.load(file)
+    cache = {}
+    if not os.path.exists(CACHE_FILE):
+        cache["current-date"] = ""
+        cache["git-repos"] = []
+    else:
+        with open(CACHE_FILE, 'r') as file:
+            cache = json.load(file)
     return cache
 
 def is_cache_outdated(cache):
@@ -26,9 +32,7 @@ def is_cache_outdated(cache):
     Returns:
     - (bool): A flag checking if cache.json's last write date is today's date.
     """
-    current_datetime = datetime.datetime.today()
-    current_date = str(datetime.datetime.date(current_datetime))
-    return cache["current-date"] != current_date
+    return cache["current-date"] != CURRENT_DATE
 
 def update_cache(cache, repositories):
     """Checks if cache.json has been updated today.
@@ -38,9 +42,7 @@ def update_cache(cache, repositories):
     Returns:
     - None
     """
-    current_datetime = datetime.datetime.today()
-    current_date = str(datetime.datetime.date(current_datetime))
-    cache["current-date"] = current_date
+    cache["current-date"] = CURRENT_DATE
     cache["git-repos"] = repositories
     with open(CACHE_FILE, 'w') as file:
         json.dump(cache, file, indent=4)
@@ -58,7 +60,7 @@ def find_git_repositories():
     file_queue = collections.deque(files)
     while file_queue:
         file = file_queue.popleft()
-        if os.path.isdir(file):
+        if os.path.isdir(file) and '.' not in file:
             directory_contents = os.listdir(file)
             if ".git" in directory_contents:
                 repositories.append(file)
