@@ -1,3 +1,6 @@
+"""
+Crawls through every directory in /home/<user> to run git status/fetch.
+"""
 import collections
 from datetime import datetime
 import json
@@ -48,7 +51,10 @@ def update_cache(cache, repositories):
         json.dump(cache, file, indent=4)
 
 def find_git_repositories():
-    """Recursively crawls through every directory in HOME_DIRECTORY to find git repos.
+    """Recursively crawls through every* directory in HOME_DIRECTORY to find git repos.
+
+    *Will not crawl through directories that start with '.'
+
     Args:
     - None
     Returns:
@@ -73,8 +79,8 @@ def find_git_repositories():
     return repositories
 
 
-def find_git_status(repositories):
-    """Checks git status of every repo found and pretty prints the result
+def check_repository_status(repositories):
+    """Runs 'git status' and 'git fetch' in each repo in repositories.
     Args:
     - repositories(list:str): absolute paths to every git repo found
     Returns:
@@ -86,6 +92,7 @@ def find_git_status(repositories):
         print("In Repository:", repository)
         os.chdir(repository)
         os.system("git status")
+        os.system("git fetch -v")
         print("{symbol}".format(symbol="*" * line_break_size))
 
 
@@ -97,4 +104,4 @@ if __name__ == "__main__":
         update_cache(cache, repositories)
     else:
         repositories = cache["git-repos"]
-    find_git_status(repositories)
+    check_repository_status(repositories)
