@@ -50,10 +50,11 @@ def find_all_images(source_path, recursive=False):
     return valid_images
     
 
-def remove_exif_data(image_file_path):
+def remove_exif_data(image_file_path, safe=False):
     """Removes exif data from an image by creating a new PIL.Image object.
     Args:
-        image_file_path: Path to image file.
+        image_file_path (str): Path to image file.
+        safe (bool): Renames the image if set to True.
     Retuns:
         None
     """
@@ -62,7 +63,12 @@ def remove_exif_data(image_file_path):
     image_data = list(image.getdata())
     clean_image = Image.new(image.mode, image.size)
     clean_image.putdata(image_data)
-    clean_image.save(image_file_path)
+    if safe:
+        safe_image_path, extension = image_file_path.split(".")
+        new_image_name = f"{safe_image_path}-safe.{extension}"
+        clean_image.save(new_image_name)
+    else:
+        clean_image.save(image_file_path)
 
 
 if __name__ == "__main__":
@@ -75,10 +81,15 @@ if __name__ == "__main__":
         action="store_true",
         default=False,
         required=False,
-        help="Also scrub images in all sub directories within directory given")
+        help="Also scrub images in all sub directories within directory given.")
+    parser.add_argument('-s', "--safe",
+        action="store_true",
+        default=False,
+        required=False,
+        help="Append '-safe' to each image filename instead of overwriting them.")
     args = parser.parse_args()
     print("Finding all images...")
     images = find_all_images(args.directory, recursive=args.recursive)
     for image in images:
-        remove_exif_data(image)
+        remove_exif_data(image, safe=args.safe)
     print("Done!")
