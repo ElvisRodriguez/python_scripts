@@ -1,3 +1,3 @@
 # python_scripts
 
-A collection of useful utility python scripts.
+A collection of useful utility and templating python scripts.
